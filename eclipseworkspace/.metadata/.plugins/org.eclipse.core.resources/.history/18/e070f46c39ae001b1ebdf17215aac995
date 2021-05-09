@@ -1,0 +1,24 @@
+package com.vti.backend.presentationlayer;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.vti.backend.businesslayer.Service;
+import com.vti.entity.Department;
+
+public class Controller {
+	private Service service;
+	
+	
+	public Controller(Service service) {
+		super();
+		this.service = service;
+	}
+
+
+	public List<Department> showDepartmentList(){
+		return service.showDepartmentList();
+	}
+	
+
+}

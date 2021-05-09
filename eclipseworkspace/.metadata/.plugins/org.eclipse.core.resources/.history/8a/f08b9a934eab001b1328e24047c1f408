@@ -1,0 +1,50 @@
+package staticT;
+
+public class HinhChuNhat extends HinhHoc{
+	private float chieuDai;
+	private float chieuRong;
+	static int countHinhChuNhat = 0;
+	
+	
+	
+	
+	public HinhChuNhat(float chieuDai, float chieuRong) throws HinhHocException {
+		if(HinhTron.countHinhTron + HinhChuNhat.countHinhChuNhat > 3){
+			throw new HinhHocException(super.getSO_LUONG_HINH_HOC_TOI_DA());
+		}else{
+			this.chieuDai = chieuDai;
+			this.chieuRong = chieuRong;
+		}
+		
+	}
+	public float getChieuDai() {
+		return chieuDai;
+	}
+	public void setChieuDai(float chieuDai) {
+		this.chieuDai = chieuDai;
+	}
+	public float getChieuRong() {
+		return chieuRong;
+	}
+	public void setChieuRong(float chieuRong) {
+		this.chieuRong = chieuRong;
+	}
+	
+	public int getCountHinhChuNhat() {
+		return countHinhChuNhat;
+	}
+	public void setCountHinhChuNhat(int countHinhChuNhat) {
+		this.countHinhChuNhat = countHinhChuNhat;
+	}
+	@Override
+	float chuVi() {
+		return ((chieuDai + chieuRong)  * 2);
+	}
+	@Override
+	float dienTich() {
+		return (chieuDai * chieuRong);
+	}
+	
+	
+
+}

@@ -1,0 +1,45 @@
+package com.vti.backend.datalayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.vti.entity.Department;
+import com.vti.utils.JDBCUtils;
+
+public class Repository implements IRepository{
+	private JDBCUtils jdbcUtis;
+	
+	public Repository() throws FileNotFoundException, IOException {
+		super();
+		jdbcUtis = new JDBCUtils();
+	}
+
+	public List<Department> getDepartmentList() throws SQLException {
+		List<Department> departments = new ArrayList<Department>();
+		// get a connection
+		jdbcUtis.connect();
+		Connection connection = jdbcUtis.getConnection();
+		// create a statement object
+		String sql = "SELECT * FROM `Department`";
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery(sql);
+		while(resultSet.next()){
+			Department dept = new Department(resultSet.getInt(1), resultSet.getString(2));
+			departments.add(dept);
+		}
+		jdbcUtis.disconnection();
+		
+		
+		return null;
+	}
+
+	
+
+
+}

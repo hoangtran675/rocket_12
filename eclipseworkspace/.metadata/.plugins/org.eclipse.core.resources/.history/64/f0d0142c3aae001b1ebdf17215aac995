@@ -1,0 +1,12 @@
+package com.vti.utils.properties;
+
+import java.util.Properties;
+
+public class SourceProperties {
+	private static final String RESOURCE_PATH = "E:\\eclipseworkspace\\mavenLesson11Class\\src\\main\\resource\\database.properties";
+	private Properties properties;
+	public SourceProperties() {
+		
+	}
+	
+}

@@ -1,0 +1,52 @@
+package com.vti.backend.businesslayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.backend.datalayer.AccountRepository;
+import com.vti.backend.datalayer.IAccountRepository;
+import com.vti.entity.Account;
+
+public class AccountService implements IAccountService{
+	private IAccountRepository repository;
+	
+	public AccountService(){
+		try {
+			repository = new AccountRepository();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public List<Account> getListAccount() {
+		try {
+			return repository.getListAccount();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public void createAccount(int id, String username, String email) {
+		try {
+			repository.createAccount(id, username, email);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public Account getAccountById(int id) {
+		return repository.getAccountById(id);
+	}
+}

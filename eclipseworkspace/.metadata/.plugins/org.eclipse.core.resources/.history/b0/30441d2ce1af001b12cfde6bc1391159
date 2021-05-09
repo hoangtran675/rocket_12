@@ -1,0 +1,20 @@
+package com.vti.FacebookDemo.backend.businesslayer;
+
+import com.vti.FacebookDemo.backend.datalayer.IRepository;
+import com.vti.FacebookDemo.backend.datalayer.Repository;
+
+public class Service implements IService{
+	private IRepository repository;
+	
+	
+	public Service() {
+		repository = new Repository();
+	}
+
+
+	public void logIn(String userName, String password) {
+		repository.logIn(userName, String password);
+	}
+	
+
+}

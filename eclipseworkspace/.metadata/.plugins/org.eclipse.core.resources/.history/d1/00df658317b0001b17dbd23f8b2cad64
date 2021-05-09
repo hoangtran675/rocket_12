@@ -1,0 +1,40 @@
+package com.vti.FacebookDemo.frontend;
+
+import java.util.List;
+
+import com.vti.FacebookDemo.backend.presentationlayer.Controller;
+import com.vti.FacebookDemo.entity.Message;
+import com.vti.FacebookDemo.entity.User;
+
+public class Program {
+	private static Controller controller;
+
+	public static void main(String[] args) {
+		controller = new Controller();
+		System.out.println("-------------------------------FACEBOOK-------------------------------\n");
+		
+	}
+	
+	public static boolean logIn(String userName, String password){
+		return controller.logIn(userName, password);
+	}
+	public static List<User>showListFriendById(int id){
+		return controller.showListFriendById(id);
+	}
+	public static List<User> AmountUserMessageWith(int userId, int amount){
+		return controller.AmountUserMessageWith(userId, amount);
+	}
+	public static List<Message> getConversation(int hostId, int friendId){
+		return controller.getConversation(hostId,friendId);
+	}
+	public static void sendMessage(int hostId, int friendId, String content){
+		controller.sendMessage(hostId, friendId, content);
+	}
+	public static void sendRequest(int fromId, int toId){
+		controller.sendRequest(fromId, toId);
+	}
+	public static void acceptRequest(int fromId, int toId){
+		controller.acceptRequest(fromId, toId);
+	}
+
+}

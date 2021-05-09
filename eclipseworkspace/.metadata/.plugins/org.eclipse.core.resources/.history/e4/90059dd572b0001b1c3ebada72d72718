@@ -1,0 +1,29 @@
+package backend.collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class Question45 {
+	public static void main(String[] args) {
+		Set<StudentCollection> s = new HashSet<StudentCollection>();
+		s.add(new StudentCollection("Hoang"));	// 5
+		s.add(new StudentCollection("Hieu"));		// 1
+		s.add(new StudentCollection("Yen"));	    // 3
+		s.add(new StudentCollection("Loan"));		// 2
+		for (StudentCollection student : s) {
+			System.out.println(student.toString());
+		}
+		List<StudentCollection> sList = new ArrayList<StudentCollection>(s);
+		Collections.sort(sList, new CompatatorID());
+		System.out.println("Before            ");
+		for (StudentCollection student : sList) {
+			System.out.println(student.toString());
+		}
+	}
+		
+	
+	
+}

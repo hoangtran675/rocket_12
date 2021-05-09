@@ -1,0 +1,19 @@
+package entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Demo {
+	public static void main(String[] args) {
+		ScannerUtils in = new ScannerUtils();
+//		Student s1 = new Student(in.inputInt("Khong phai la so INT"), in.inputString());
+//		Student s2 = new Student(in.inputInt("Khong phai la so INT"), in.inputString());
+//		Student s3 = new Student(in.inputInt("Khong phai la so INT"), in.inputString());
+		
+		List<Student> s = new ArrayList<Student>();
+		s.add(new Student(in.inputInt("Khong phai la so INT"), in.inputString()));
+		s.add(new Student(in.inputInt("Khong phai la so INT"), in.inputString()));
+		s.add(new Student(in.inputInt("Khong phai la so INT"), in.inputString()));
+	}
+
+}

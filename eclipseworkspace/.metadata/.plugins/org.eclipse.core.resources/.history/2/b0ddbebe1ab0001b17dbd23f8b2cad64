@@ -1,0 +1,68 @@
+package com.vti.FacebookDemo.frontend;
+
+import java.util.List;
+
+import com.vti.FacebookDemo.backend.presentationlayer.Controller;
+import com.vti.FacebookDemo.entity.Message;
+import com.vti.FacebookDemo.entity.User;
+import com.vti.FacebookDemo.utils.ScannerUtils;
+
+public class Program {
+	private static Controller controller;
+
+	public static void main(String[] args) {
+		ScannerUtils scanner = new ScannerUtils();
+		controller = new Controller();
+		System.out.println("-------------------------------FACEBOOK-------------------------------\n");
+		System.out.println("1: LOG IN\n2: EXIT");
+		int logInOrExist = 0;
+		do{
+			System.out.print("Your decision :");
+			scanner.inputInt("Wrong input! Please Select 1 or 2 ");
+			if(logInOrExist == 2){
+				System.out.println("************ You Selected : EXIT");
+				return;
+			}else if(logInOrExist == 1){
+				System.out.println("************ You Selectd  : LOG IN ");
+				System.out.print("Input Username : ");
+				String username = scanner.inputString();
+				System.out.print("Input Password : ");
+				String password = scanner.inputString();
+				boolean logInCheck = logIn(username, password);
+				if(logInCheck == true){
+					int currentId = getId(username, password);
+					System.out.println("----------------------FUNCTION----------------------");
+				}
+				
+			}
+		}while((logInOrExist ==1) && (logInOrExist == 2));
+		
+		
+	}
+	
+	public static boolean logIn(String userName, String password){
+		return controller.logIn(userName, password);
+	}
+	public static List<User>showListFriendById(int id){
+		return controller.showListFriendById(id);
+	}
+	public static List<User> AmountUserMessageWith(int userId, int amount){
+		return controller.AmountUserMessageWith(userId, amount);
+	}
+	public static List<Message> getConversation(int hostId, int friendId){
+		return controller.getConversation(hostId,friendId);
+	}
+	public static void sendMessage(int hostId, int friendId, String content){
+		controller.sendMessage(hostId, friendId, content);
+	}
+	public static void sendRequest(int fromId, int toId){
+		controller.sendRequest(fromId, toId);
+	}
+	public static void acceptRequest(int fromId, int toId){
+		controller.acceptRequest(fromId, toId);
+	}
+	public static int getId(String username, String password){
+		return controller.getId(username, password);
+	}
+
+}

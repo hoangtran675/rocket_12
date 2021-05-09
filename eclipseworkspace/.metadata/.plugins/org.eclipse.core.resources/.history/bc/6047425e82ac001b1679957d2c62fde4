@@ -1,0 +1,14 @@
+package entity;
+
+public class Program {
+	// C:\\Users\\Admin\\Desktop\\myfile.txt
+	public static void main(String[] args) throws Exception {
+		FileManager fileManager = new FileManager();
+		System.out.println(fileManager.isFileExist("C:\\Users\\Admin\\Desktop\\myfile.txt"));
+		fileManager.createNewFile("C:\\Users\\Admin\\Desktop\\mynewfile.txt");
+		fileManager.deleteFile("C:\\Users\\Admin\\Desktop\\mynewfile.txt");
+		
+	}
+	
+
+}

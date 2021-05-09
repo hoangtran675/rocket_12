@@ -1,0 +1,26 @@
+package com.vti.backend.presentationlayer;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.backend.businesslayer.AccountService;
+import com.vti.backend.businesslayer.IAccountService;
+import com.vti.backend.datalayer.AccountRepository;
+import com.vti.entity.Account;
+
+public class AccountController{
+
+private IAccountService service;
+	
+	public AccountController(){
+		service = new AccountService();
+	}
+	
+	public List<Account> getListAccount(){
+		return service.getListAccount();
+	}
+	
+	public void createAccount(int id, String username, String email){
+		service.createAccount(id, username, email);
+	}
+}

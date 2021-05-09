@@ -1,0 +1,7 @@
+package com.vti.FacebookDemo.backend.businesslayer;
+
+public interface IService {
+
+	void logIn(String userName, String password);
+
+}

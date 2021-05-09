@@ -1,0 +1,8 @@
+package entity;
+
+public class Program {
+	// C:\\Users\\Admin\\Desktop\\myfile.txt
+	FileManager fileManager = new FileManager();
+	
+
+}

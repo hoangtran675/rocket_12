@@ -1,0 +1,8 @@
+package entity;
+
+public class Demo {
+	public static void main(String[] args) {
+		Student s1 = new Student(inputInt("Khong phai la so INT"), inputString());
+	}
+
+}

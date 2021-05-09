@@ -1,0 +1,48 @@
+package com.vti.FacebookDemo.backend.businesslayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.FacebookDemo.backend.datalayer.IRepository;
+import com.vti.FacebookDemo.backend.datalayer.Repository;
+import com.vti.FacebookDemo.entity.User;
+
+public class Service implements IService{
+	private IRepository repository;
+	
+	
+	public Service() {
+		try {
+			repository = new Repository();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+
+	public boolean logIn(String userName, String password) {
+		try {
+			return repository.logIn(userName, password);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+
+	public List<User> showListFriendById(int id) {
+		return repository.showListFriendById(id);
+	}
+	
+
+}

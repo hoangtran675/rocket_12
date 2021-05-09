@@ -1,0 +1,23 @@
+package com.vti.utils;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+import com.vti.utils.properties.SourceProperties;
+
+public class JDBCUtils {
+	
+	private SourceProperties sp;
+	public JDBCUtils() throws FileNotFoundException, IOException {
+		sp = new SourceProperties();
+	}
+	public Connection connect(){
+		String url = sp.getValue("url");
+		String user = sp.getValue("user");
+		String password = sp.getValue("password");
+		
+		return DriverManager.getConnection(url, user, password) ;
+	}
+}

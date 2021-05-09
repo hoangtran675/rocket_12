@@ -1,0 +1,9 @@
+package generics;
+
+public class Question1 {
+	// Question 1
+	Student<Integer> s1 = new Student<Integer>(1, "Hoang");
+	Student<Float> s2 = new Student<Float>(2f, "Hoang");
+	Student<Double> s3 = new Student<Double>(3d, "Hoang");
+	
+}

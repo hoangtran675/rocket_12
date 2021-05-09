@@ -1,0 +1,80 @@
+package entity;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+public class FileManager {
+	final String fileExisted = "Error ! File Exist";
+	final String fileNotExisted = "Error ! File Not Exist";
+	
+
+	public boolean isFileExist(String path) {
+		File file = new File(path);
+		if (file.exists())
+			return true;
+		else
+			return false;
+	}
+
+	public void createNewFile(String path) throws Exception {
+		if (isFileExist(path)) {
+			throw new Exception(fileExisted);
+		} else {
+			File file = new File(path);
+			if(file.createNewFile()){
+				System.out.println("Create New File Successfully !");
+			}
+			else{
+				System.out.println("Fail To Create New File !");
+			}
+		}
+	}
+	public void deleteFile(String path) throws Exception{
+		if(isFileExist(path) == false){
+			throw new Exception(fileNotExisted);
+		} else{
+			File file = new File(path);
+			if(file.delete()){
+				System.out.println("File Is Deleted Successfully");
+			}else{
+				System.out.println("Fail To Delete File");
+			}
+		}
+	}
+	public boolean isFolder(String path) throws Exception{
+		if (isFileExist(path)) {
+			throw new Exception(fileExisted);
+		} else {
+			File file  = new File(path);
+			if(file.isDirectory()){
+				return true;
+			}else{
+				return false;
+			}
+		}
+	}
+	// ham chi lay ten file, khong lay ten folder
+	public List<String> getAllFileName(String path) throws Exception{
+		List<String> listFile = new ArrayList<String>();
+		if(isFileExist(path) == false){
+			throw new Exception(fileNotExisted);
+		} else{
+			File file = new File(path);
+			for (File element : file.listFiles()) {
+				listFile.add(element.getName());
+			}
+			return listFile;
+		}
+	}
+	public void copyFile(String sourceName, String destName, String newName) throws Exception{
+		if(isFileExist(sourceName) == false){
+			throw new Exception("Error! Source File Not Exist");
+		} else if(isFileExist(destName)){
+			throw new Exception("Error! newPath has File same name");
+		} else{
+			copyFile(sourceName, destName, newName);
+		}
+	}
+	
+}

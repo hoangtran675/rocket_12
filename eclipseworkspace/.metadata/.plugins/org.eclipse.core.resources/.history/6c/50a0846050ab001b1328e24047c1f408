@@ -1,0 +1,23 @@
+package staticT;
+
+public abstract class HinhHoc {
+	private final int SO_LUONG_HINH_HOC_TOI_DA = 5;
+	private static int countHinhHoc = 0;
+	
+	
+	
+	public static int getCountHinhHoc() {
+		return countHinhHoc;
+	}
+	public static void setCountHinhHoc(int countHinhHoc) {
+		HinhHoc.countHinhHoc = countHinhHoc;
+	}
+	abstract float chuVi();
+	abstract float dienTich();
+	
+	
+	public int getSO_LUONG_HINH_HOC_TOI_DA() {
+		return SO_LUONG_HINH_HOC_TOI_DA;
+	}
+	
+}

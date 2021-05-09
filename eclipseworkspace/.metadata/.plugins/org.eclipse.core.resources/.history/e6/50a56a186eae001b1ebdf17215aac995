@@ -1,0 +1,16 @@
+package com.vti.utils;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class test {
+
+	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException, SQLException {
+		JDBCUtils a = new JDBCUtils();
+		a.connect();
+		Connection con = a.getConnection();
+	}
+
+}

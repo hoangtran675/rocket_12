@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;staticT.question1&apos; to &apos;Program&apos;&#x0D;&#x0A;- Original project: &apos;Testing_System_7&apos;&#x0D;&#x0A;- Original element: &apos;staticT.question1&apos;&#x0D;&#x0A;- Renamed element: &apos;staticT.Program&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;question1&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;staticT{question1.java[question1" matchStrategy="1" name="Program" qualified="false" references="true" similarDeclarations="false" stamp="1619190439300" textual="false" version="1.0"/>
+</session>

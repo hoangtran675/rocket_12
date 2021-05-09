@@ -1,0 +1,55 @@
+package com.vti.backend.presentationlayer;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.backend.businesslayer.AccountService;
+import com.vti.backend.businesslayer.IAccountService;
+import com.vti.backend.datalayer.AccountRepository;
+import com.vti.entity.Account;
+
+public class AccountController {
+
+	private IAccountService service;
+
+	public AccountController() {
+		service = new AccountService();
+	}
+
+	public List<Account> getListAccount() {
+		return service.getListAccount();
+	}
+
+	public void createAccount(int id, String username, String email) {
+		if (isAccountExistsById(id)) {
+			System.out.println("ID is already existed");
+		} else {
+			service.createAccount(id, username, email);
+		}
+	}
+
+	public Account getAccountById(int id) {
+		return service.getAccountById(id);
+		if (isAccountExistsById(id)) {
+			return service.getAccountById(id);
+		} else {
+			
+		}
+	}
+
+	public boolean isAccountExists(String username) {
+		return service.isAccountExists(username);
+	}
+
+	public boolean isAccountExistsById(int id) {
+		return service.isAccountExistsById(id);
+	}
+
+	public void updateAccountByID(int id, String newUsername, String newEmail) {
+		service.updateAccountByID(id, newUsername, newEmail);
+	}
+
+	public void deleteAccount(int id) {
+		service.deleteAccount(id);
+	}
+}

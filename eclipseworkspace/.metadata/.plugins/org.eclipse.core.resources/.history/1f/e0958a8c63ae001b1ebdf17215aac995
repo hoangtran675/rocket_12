@@ -1,0 +1,5 @@
+department.update.success=update success
+department.update.fail=update fail
+
+account.insert.success=account insert success
+account.insert.fail=account insert fail

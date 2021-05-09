@@ -1,0 +1,19 @@
+package staticT;
+
+public class testexception {
+
+	public static void main(String[] args) throws Exception {
+		testexception n = new testexception();
+		n.check(4);
+		System.out.println("More code can go here");
+	}
+
+	public static void check(int a) throws Exception {
+		if (a > 5) {
+			throw new Exception("loix");
+		} else {
+			System.out.println("success");
+		}
+	}
+
+}

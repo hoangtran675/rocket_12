@@ -1,0 +1,11 @@
+package com.vti.FacebookDemo.backend.businesslayer;
+
+import com.vti.FacebookDemo.entity.User;
+
+public interface IService {
+
+	boolean logIn(String userName, String password);
+
+	User showListFriendById(int id);
+
+}

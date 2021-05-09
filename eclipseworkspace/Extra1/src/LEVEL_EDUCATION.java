@@ -1,0 +1,4 @@
+
+public enum LEVEL_EDUCATION {
+	UNIVERSITY, COLLEGE;
+}

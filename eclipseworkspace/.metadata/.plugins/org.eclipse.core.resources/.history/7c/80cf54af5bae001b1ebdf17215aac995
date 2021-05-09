@@ -1,0 +1,11 @@
+package com.vti.utils.properties;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class program {
+public static void main(String[] args) throws FileNotFoundException, IOException {
+	SourceProperties a = new SourceProperties();
+	System.out.println(a.getValue("url"));
+}
+}

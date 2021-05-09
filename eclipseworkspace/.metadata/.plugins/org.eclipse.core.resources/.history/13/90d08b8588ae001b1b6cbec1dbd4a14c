@@ -1,0 +1,8 @@
+account.create.success=Create Account Successfully
+account.create.fail=Fail To Create Account
+
+account.update.success=Update Account Successfully
+account.update.fail=Fail To Update Account
+
+account.delete.success=Delete Account Successfully
+account.delete.fail=Fail To Delete Account

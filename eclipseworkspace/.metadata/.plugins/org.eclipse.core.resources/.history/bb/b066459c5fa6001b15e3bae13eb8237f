@@ -1,0 +1,35 @@
+package generics;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Program {
+	public static void main(String[] args) {
+//		print("student");
+//		print(4);
+//		print(4.0);
+		int[] intArr = {10,20,30,40};
+		long[] longArr = {100l, 200l, 300l, 400l};
+		float[] floatArr = {10.0f, 20.0f, 30.0f, 40.0f};
+		double[] doubleArr= {10.01d, 20.01d, 30.01d, 40.01d};
+		
+	}
+	// Question 1
+	public static void question1() {
+		Student<Integer> s1 = new Student<Integer>(1, "Hoang");
+		Student<Float> s2 = new Student<Float>(2f, "Hoang");
+		Student<Double> s3 = new Student<Double>(3d, "Hoang");
+	}
+	// Question 2
+	public static <T> void print(T var){
+		System.out.println(var);
+	}
+	// Question 4
+	public static <T> void printArr(ArrayList<T> varArr){
+		for (T element : varArr) {
+			System.out.println(element);
+		}
+	}
+	
+	
+}

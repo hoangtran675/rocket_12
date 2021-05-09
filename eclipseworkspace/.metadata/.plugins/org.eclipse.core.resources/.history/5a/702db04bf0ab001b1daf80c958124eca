@@ -1,0 +1,19 @@
+package entity;
+
+import java.io.File;
+import java.io.FileInputStream;
+
+public class IOStream {
+	public void readFile(String path) throws Exception{
+		File file = new File(path);
+		if(file.exists() == false){
+			throw new Exception("File is not exist");
+		} else{
+		FileInputStream f = new FileInputStream(path);
+		// chia ra doc 1024 byte mot lan
+		byte[] b = new byte[1024];
+		// voi 1024 byte kia la se doc duoc 1 doan co do dai la length
+		int length = f.read(b);
+		}
+	}
+}

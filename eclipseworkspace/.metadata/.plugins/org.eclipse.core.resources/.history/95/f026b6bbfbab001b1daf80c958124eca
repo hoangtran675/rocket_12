@@ -1,0 +1,9 @@
+package entity;
+
+public class Demo {
+	public static void main(String[] args) {
+		ScannerUtils in = new ScannerUtils();
+		Student s1 = new Student(in.inputInt("Khong phai la so INT"), in.inputString());
+	}
+
+}

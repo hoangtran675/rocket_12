@@ -1,0 +1,65 @@
+package com.vti.backend.datalayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Properties;
+
+import com.vti.entity.Department;
+import com.vti.utils.JDBCUtils;
+import com.vti.utils.properties.SourceProperties;
+
+public class Repository implements IRepository{
+	private JDBCUtils jdbcUtis;
+	private SourceProperties  properties;
+	
+	public Repository() throws FileNotFoundException, IOException {
+		super();
+		jdbcUtis = new JDBCUtils();
+		properties = new SourceProperties();
+	}
+
+	public List<Department> getDepartmentList() throws SQLException, ClassNotFoundException {
+		List<Department> departments = new ArrayList<Department>();
+		// get a connection
+		jdbcUtis.connect();
+		Connection connection = jdbcUtis.getConnection();
+		// create a statement object
+		String sql = "SELECT * FROM `Department`";
+		Statement statement = connection.createStatement();
+		ResultSet resultSet = statement.executeQuery(sql);
+		while(resultSet.next()){
+			Department dept = new Department(resultSet.getInt(1), resultSet.getString(2));
+			departments.add(dept);
+		}
+		jdbcUtis.disconnection();
+		return departments;
+	}
+
+	public void updateDepartment(int id, String name) throws ClassNotFoundException, SQLException {
+		jdbcUtis.connect();
+		Connection connection = jdbcUtis.getConnection();
+		String sql = "UPDATE `Department` SET department_id = ? WHERE department_name = ?";
+		PreparedStatement pre = connection.prepareStatement(sql);
+		pre.setInt(1, id);
+		pre.setString(2, name);
+		int effectedRecordAmount = pre.executeUpdate();
+		if(effectedRecordAmount == 1){
+			System.out.println(properties.g);
+		}
+		System.out.println("EffectedRecordAmount : " + effectedRecordAmount);
+		
+		
+	}
+
+	
+
+
+}

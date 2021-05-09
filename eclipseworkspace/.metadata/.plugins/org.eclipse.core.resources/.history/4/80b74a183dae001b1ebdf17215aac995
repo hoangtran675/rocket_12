@@ -1,0 +1,27 @@
+package com.vti.backend.businesslayer;
+
+import java.util.List;
+
+import com.vti.backend.datalayer.IRepository;
+import com.vti.backend.datalayer.Repository;
+import com.vti.entity.Department;
+
+public class Service implements IService{
+	private IRepository repository;
+	
+	
+	public Service() {
+		super();
+		this.repository = new Repository();
+	}
+
+
+	public List<Department> showDepartmentList() {
+		return null;
+	}
+
+
+	
+	
+	
+}

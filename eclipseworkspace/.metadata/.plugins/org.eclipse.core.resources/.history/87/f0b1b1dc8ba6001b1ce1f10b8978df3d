@@ -1,0 +1,14 @@
+package lesson8;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ListDemo {
+	public static void main(String[] args) {
+		List<Integer> arrList = new ArrayList<Integer>();
+		arrList.add(5);
+		arrList.add(6);
+		arrList.add(7);
+	}
+	
+}

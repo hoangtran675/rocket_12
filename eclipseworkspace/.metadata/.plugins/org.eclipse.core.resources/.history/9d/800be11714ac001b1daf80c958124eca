@@ -1,0 +1,23 @@
+package entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Demo {
+	public static void main(String[] args) {
+		ScannerUtils in = new ScannerUtils();
+//		Student s1 = new Student(in.inputInt("Khong phai la so INT"), in.inputString());
+//		Student s2 = new Student(in.inputInt("Khong phai la so INT"), in.inputString());
+//		Student s3 = new Student(in.inputInt("Khong phai la so INT"), in.inputString());
+		
+		List<Student> s = new ArrayList<Student>();
+		System.out.println("Nhap vao thong tin hoc sinh thu nhat : ");
+		s.add(new Student(in.inputInt("Khong phai la so INT"), in.inputString()));
+		System.out.println("Nhap vao thong tin hoc sinh thu hai : ");
+		s.add(new Student(in.inputInt("Khong phai la so INT"), in.inputString()));
+		System.out.println("Nhap vao thong tin hoc sinh thu ba : ");
+		s.add(new Student(in.inputInt("Khong phai la so INT"), in.inputString()));
+		
+	}
+
+}

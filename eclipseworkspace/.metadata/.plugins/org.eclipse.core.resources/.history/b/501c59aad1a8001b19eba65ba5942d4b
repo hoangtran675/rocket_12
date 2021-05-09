@@ -1,0 +1,28 @@
+package wildcard;
+
+public class Program {
+	public static void main(String[] args) {
+//	Integer a = new Integer(5);
+//	Integer b = new Integer(10);
+//	if(a<b) {
+//		System.out.println("1000");
+//	}
+//	}
+//	
+//	public static void question1(){
+//		Salary s1 = new Salary(1);
+//		Salary s2 = new Salary(1.0f);
+//		Salary s3 = new Salary(1.2345d);
+//		System.out.println("s1 : " + s1.getSalary());
+//		System.out.println("s2 : " + s2.getSalary());
+//		System.out.println("s3 : " + s3.getSalary());
+//	
+//	MyMath a = new MyMath();
+//	System.out.println(a.max(10, 2.5));
+	MyMath<Integer> aInteger = new MyMath<Integer>();
+	System.out.println(aInteger.sum(100, 1000, 10000));
+	System.out.println(aInteger.sum(20, 200, 2000, 20000));
+	MyMath<Float> aFloat = new MyMath<Float>();
+	System.out.println(aFloat.sum(100f, 12.34f));
+	}
+}

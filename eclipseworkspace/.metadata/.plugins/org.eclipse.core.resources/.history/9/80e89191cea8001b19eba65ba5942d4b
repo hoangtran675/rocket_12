@@ -1,0 +1,19 @@
+package wildcard;
+
+public class MyMath <N extends Number>{
+	public  <T extends Comparable<T>> T max(T a, T b){
+		Double a1 = Double.valueOf((String) a);
+		Double b1 = Double.valueOf((String) b);
+		if(a1.compareTo(b1) > 0) return a;
+		else if(a1.compareTo(b1) < 0) return b;
+		else return a;
+	}
+	
+	public N add(N... numbers) {
+		Double sum = 0d;
+		for (N n : numbers) {
+			sum = sum + (Double)n;
+		}
+		return (N) sum;
+	}
+}

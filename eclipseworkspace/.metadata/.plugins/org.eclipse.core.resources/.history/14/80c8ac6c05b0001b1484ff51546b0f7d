@@ -1,0 +1,30 @@
+package com.vti.FacebookDemo.backend.presentationlayer;
+
+import java.util.List;
+
+import com.vti.FacebookDemo.backend.businesslayer.IService;
+import com.vti.FacebookDemo.backend.businesslayer.Service;
+import com.vti.FacebookDemo.entity.Message;
+import com.vti.FacebookDemo.entity.User;
+
+public class Controller {
+	private IService service;
+
+	public Controller() {
+		service = new Service();
+	}
+	
+	public boolean logIn(String userName, String password){
+		return service.logIn(userName, password);
+	}
+	public List<User> showListFriendById(int id){
+		return service.showListFriendById(id);
+	}
+	public List<User> AmountUserMessageWith(int userId, int amount){
+		return service.AmountUserMessageWith(userId, amount);
+	}
+	public List<Message> getConversation(int hostId, int friendId){
+		return service.getConversation(hostId,friendId);
+	}
+	
+}

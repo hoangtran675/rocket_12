@@ -1,0 +1,83 @@
+package staticT;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Program {
+
+	public static void main(String[] args) {
+//		int result = Math.max(5, 5);
+//		System.out.println(result);
+		question1();
+		
+	}
+		// Question 1
+		public static void question1(){
+			Student a = new Student(1, "Nguyen Van A");
+			Student b = new Student(2, "Nguyen Van B");
+			Student c = new Student(3, "Nguyen Van C");
+			List<Student> students = new ArrayList<Student>();
+			students.add(a);
+			students.add(b);
+			students.add(c);
+			for(Student student : students){
+				System.out.println(student.toString());
+			}
+			
+			Student.setCollege("Dai Hoc Cong Nghe");
+			System.out.println("-------------------------------After change-------------------------------");
+			for(Student student : students){
+				System.out.println(student.toString());
+			}
+		
+	}
+		// Question 2
+		public static void question2(){
+			Student a = new Student(1, "Nguyen Van A");
+			Student b = new Student(2, "Nguyen Van B");
+			Student c = new Student(3, "Nguyen Van C");
+			List<Student> students = new ArrayList<Student>();
+			students.add(a);
+			students.add(b);
+			students.add(c);
+			int tongTien = 0;
+			// Hoc sinh nop quy
+			for(Student student : students){
+				student.setGroupMoney(100000);
+				tongTien = tongTien + student.getGroupMoney();
+			}
+			System.out.println("So tien con lai sau dong gop : " + tongTien);
+			
+			// Hoc sinh thu 1 rut 50000
+			students.get(0).setGroupMoney(students.get(0).getGroupMoney() - 50000);
+			tongTien = 0;
+			for(Student student : students){
+				tongTien = tongTien + student.getGroupMoney();
+			}
+			System.out.println("So tien con lai sau khi hs1 rut 50000 : " + tongTien);
+			
+			// Hoc sinh thu 2 rut 20000
+			students.get(1).setGroupMoney(students.get(1).getGroupMoney() - 20000);
+			tongTien = 0;
+			for(Student student : students){
+				tongTien = tongTien + student.getGroupMoney();
+			}
+			System.out.println("So tien con lai sau khi hs2 rut 20000 : " + tongTien);
+			
+			// Hoc sinh thu 3 rut 150000
+			tongTien = tongTien - 150000;
+			System.out.println("So tien con lai sau khi hs3 rut 150000 : " + tongTien);
+			
+			// Moi hoc sinh lai dong gop 50000
+			for(Student student : students){
+				student.setGroupMoney(student.getGroupMoney() + 50000);
+				tongTien = tongTien + 50000;
+			}
+			System.out.println("So tien con lai sau khi moi hs dong gop them 50000 : " + tongTien);
+		}
+		
+		// question3 trong class MyMath
+		// Question4 trong Student
+		
+
+}

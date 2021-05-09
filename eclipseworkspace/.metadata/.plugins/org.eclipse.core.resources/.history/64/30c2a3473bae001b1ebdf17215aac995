@@ -1,0 +1,21 @@
+package com.vti.backend.datalayer;
+
+import java.util.List;
+
+import com.vti.entity.Department;
+import com.vti.utils.JDBCUtils;
+
+public class Repository implements IRepository{
+	private JDBCUtils jdbcUtis;
+	
+	public Repository() {
+		super();
+		jdbcUtis = new JDBCUtils();
+	}
+
+	public List<Department> getDepartmentList() {
+		return null;
+	}
+
+
+}

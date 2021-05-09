@@ -1,0 +1,14 @@
+package entity;
+
+import java.io.File;
+
+public class FileManager {
+	final String fileExisted = "Error ! File Exist";
+	public boolean isFileExist(String path) {
+		File file = new File(path);
+		if (file.exists())
+			return true;
+		else
+			return false;
+	}
+}

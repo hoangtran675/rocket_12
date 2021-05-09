@@ -1,0 +1,39 @@
+package staticT;
+
+public class HinhChuNhat extends HinhHoc {
+	HinhChuNhat() throws HinhHocException {
+		super();
+	}
+
+	private float chieuDai;
+	private float chieuRong;
+
+	
+
+	public float getChieuDai() {
+		return chieuDai;
+	}
+
+	public void setChieuDai(float chieuDai) {
+		this.chieuDai = chieuDai;
+	}
+
+	public float getChieuRong() {
+		return chieuRong;
+	}
+
+	public void setChieuRong(float chieuRong) {
+		this.chieuRong = chieuRong;
+	}
+
+	@Override
+	float chuVi() {
+		return ((chieuDai + chieuRong) * 2);
+	}
+
+	@Override
+	float dienTich() {
+		return (chieuDai * chieuRong);
+	}
+
+}

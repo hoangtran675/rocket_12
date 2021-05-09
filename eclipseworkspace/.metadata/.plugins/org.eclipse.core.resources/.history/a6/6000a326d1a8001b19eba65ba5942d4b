@@ -1,0 +1,22 @@
+package wildcard;
+
+public class MyMath<N extends Number> { // N ke thua kieu so
+	public <T extends Comparable<T>> T max(T a, T b) {
+		if (a.compareTo(b) > 0)
+			return a;
+		else if (a.compareTo(b) < 0)
+			return b;
+		else
+			return a;
+	}
+
+	public N sum(N... numbers) {
+		Double sum = 0d; // khai bao sum kieu Double thi khi return co the ep
+							// kieu thanh N ,
+		// ep kieu object ve object
+		for (N n : numbers) {
+			sum = sum + n.doubleValue();
+		}
+		return (N) sum;
+	}
+}

@@ -1,0 +1,11 @@
+package com.vti.backend.businesslayer;
+
+import com.vti.backend.datalayer.AccountRepository;
+
+public class AccountService {
+	private AccountRepository repository;
+	
+	AccountService(){
+		repository = new AccountRepository();
+	}
+}

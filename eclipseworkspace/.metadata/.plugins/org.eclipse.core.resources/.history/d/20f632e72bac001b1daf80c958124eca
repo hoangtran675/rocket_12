@@ -1,0 +1,10 @@
+package callprocedure;
+
+public class question1 {
+	public static String url = "jdbc:mysql://localhost:3306/testing_system_assignment?autoReconnect=true&useSSL=false&characterEncoding=latin1";
+	public static String name = "root";
+	public static String password = "root";
+	public static void main(String[] args) throws ClassNotFoundException {
+		Class.forName("com.mysql.cj.jdbc.Driver");
+	}
+}

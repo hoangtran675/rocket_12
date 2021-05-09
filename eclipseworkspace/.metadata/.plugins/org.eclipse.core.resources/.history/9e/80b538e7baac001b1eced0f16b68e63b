@@ -1,0 +1,23 @@
+package com.vti.backend.datalayer;
+
+import com.vti.utils.JdbcUtils;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.entity.*;
+
+public class AccountRepository {
+	private JdbcUtils jdbcUtils;
+	public AccountRepository(){
+		jdbcUtils = new JdbcUtils();
+	}
+	public List<Account> getListAccount() throws ClassNotFoundException, SQLException{
+		Connection connection = jdbcUtils.connect();
+		jdbcUtils.disconnect(connection);
+		return null;
+		
+	}
+
+}

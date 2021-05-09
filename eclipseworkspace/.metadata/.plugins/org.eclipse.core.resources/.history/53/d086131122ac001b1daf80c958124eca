@@ -1,0 +1,15 @@
+package comparing;
+
+import java.time.LocalDate;
+import java.util.Comparator;
+
+public class ComparatorDate implements Comparator<Student>{
+
+	@Override
+	public int compare(Student s1, Student s2) {
+		int day1 = (int) LocalDate.of(s1.getDateOfBirth().getYear(), s1.getDateOfBirth().getMonth(), s1.getDateOfBirth().getDate()).toEpochDay(); 
+		int day2 = (int) LocalDate.of(s2.getDateOfBirth().getYear(), s2.getDateOfBirth().getMonth(), s2.getDateOfBirth().getDate()).toEpochDay(); 
+		return 0;
+	}
+
+}

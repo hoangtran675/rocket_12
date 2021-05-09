@@ -1,0 +1,35 @@
+package entity;
+
+import java.io.File;
+
+public class FileManager {
+	final String fileExisted = "Error ! File Exist";
+	final String fileNotExisted = "Error ! File Not Exist"
+
+	public boolean isFileExist(String path) {
+		File file = new File(path);
+		if (file.exists())
+			return true;
+		else
+			return false;
+	}
+
+	public void createNewFile(String path) throws Exception {
+		if (isFileExist(path) == true) {
+			throw new Exception(fileExisted);
+		} else {
+			File file = new File(path);
+			if(file.createNewFile()){
+				System.out.println("Create New File Successfully !");
+			}
+			else{
+				System.out.println("Fail To Create New File !");
+			}
+		}
+	}
+	public void deleteFile(String path){
+		if(isFileExist(path) == false){
+			throw new Exception(fileExisted);
+		}
+	}
+}

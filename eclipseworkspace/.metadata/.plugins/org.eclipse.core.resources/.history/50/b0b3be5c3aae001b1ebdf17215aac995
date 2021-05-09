@@ -1,0 +1,8 @@
+package com.vti.utils;
+
+public class JDBCUtils {
+	
+	String url = "";
+	String user = "";
+	String password = "";
+}

@@ -1,0 +1,19 @@
+package lesson8;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ListDemo {
+	public static void main(String[] args) {
+		List<Integer> arrList = new ArrayList<Integer>(2);
+		// method : add new implement to List
+		// method : size() : amount of available element
+		arrList.add(5);
+		arrList.add(6);
+		// create new Array : 5,6,0 (newArray.length = 1.5 oldArrayLength)
+		arrList.add(7);
+		// change 0 to 7 => 5,6,7
+		System.out.println(arrList);
+	}
+	
+}

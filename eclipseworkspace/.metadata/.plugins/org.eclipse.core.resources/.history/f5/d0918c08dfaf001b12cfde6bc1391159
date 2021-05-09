@@ -1,0 +1,7 @@
+package com.vti.FacebookDemo.backend.presentationlayer;
+
+import com.vti.FacebookDemo.backend.businesslayer.IService;
+
+public class Controller {
+	private IService service;
+}

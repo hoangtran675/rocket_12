@@ -1,0 +1,15 @@
+package finalT;
+
+public class Student {
+	
+	private static int id;
+	private String name;
+	
+	public Student(int id, String name) {
+		super();
+		this.name = name;
+		this.id = id;
+	}
+	
+	
+}

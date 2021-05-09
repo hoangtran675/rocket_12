@@ -1,0 +1,80 @@
+package com.vti.frontend;
+
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Scanner;
+
+import com.vti.backend.presentationlayer.AccountController;
+import com.vti.entity.Account;
+
+public class Program {
+	private static AccountController controller;
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		controller = new AccountController();
+		System.out.println("Function List: ");
+		System.out.println("1 : Show List Account"
+				+ "\n2 : Create Account"
+				+ "\n3 : Get Account By ID"
+				+ "\n4 : Check Account Exist Or Not"
+				+ "\n5 : Update Account By ID"
+				+ "\n6 : Delete Account By ID");
+		Scanner scanner = new Scanner(System.in);
+		int selectFunction;
+		do{
+			System.out.print("Select function : ");
+			selectFunction = scanner.nextInt();
+			switch(selectFunction){
+			case 1 : 
+			case 2 :
+			case 3 :
+			case 4 : 
+			case 5 :
+			case 6 :
+			}
+		}while();
+		// Show List Account
+		showListAccount();
+		// Create Account
+		createAccount(1, "HoangTran", "tran16875@gmail.com");
+		// Get Account By ID
+		Account acc = getAccountById(1);
+		System.out.println(acc.toString());
+		// Check Account Exist Or Not
+		System.out.println(isAccountExists("HoangTran"));
+		// Update Account By ID
+		 updateAccountById(1, "newHoangTran","newtran16875@gmail.com");
+		// Delete Account By ID
+		controller.deleteAccount(1);
+
+	}
+	
+	// Get List Account
+	public static void showListAccount(){
+		List<Account> accounts = controller.getListAccount();
+		 for (Account account : accounts) {
+		 System.out.println(account.toString());
+		 }
+	}
+	//Create Account
+	public static void createAccount(int id, String username, String email){
+		controller.createAccount(1, "HoangTran", "tran16875@gmail.com");
+	}
+	// Get Account By ID
+	public static Account getAccountById(int id){
+		return controller.getAccountById(1);
+	}
+	// Check Account Exist Or Not
+	public static boolean isAccountExists(String username){
+		return controller.isAccountExists("HoangTran");
+	}
+	// Update Account By ID
+	public static void updateAccountById(int id, String newUsername, String newEmail){
+		controller.updateAccountByID(id, newUsername, newEmail);
+	}
+	// Delete Account By ID
+	public static void deleteAccount(int id){
+		controller.deleteAccount(id);
+	}
+}

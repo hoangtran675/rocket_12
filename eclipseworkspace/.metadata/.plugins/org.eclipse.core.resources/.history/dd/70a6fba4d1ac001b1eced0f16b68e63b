@@ -1,0 +1,10 @@
+package com.vti.backend.presentationlayer;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.vti.entity.Account;
+
+public interface IAccountController {
+	public List<Account> getListAccount() throws ClassNotFoundException, SQLException;
+}

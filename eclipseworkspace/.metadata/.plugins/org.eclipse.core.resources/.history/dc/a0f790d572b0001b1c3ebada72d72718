@@ -1,0 +1,5 @@
+package backend.wildcard;
+
+public class MyNumber <N extends Number>{
+	
+}

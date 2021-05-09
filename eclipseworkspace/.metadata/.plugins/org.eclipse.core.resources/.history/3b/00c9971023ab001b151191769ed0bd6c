@@ -1,0 +1,54 @@
+package staticT;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Program {
+
+	public static void main(String[] args) {
+//		int result = Math.max(5, 5);
+//		System.out.println(result);
+		question2();
+		
+	}
+		// Question 1
+		public static void question1(){
+			Student a = new Student(1, "Nguyen Van A");
+			Student b = new Student(2, "Nguyen Van B");
+			Student c = new Student(3, "Nguyen Van C");
+			List<Student> students = new ArrayList<Student>();
+			students.add(a);
+			students.add(b);
+			students.add(c);
+			for(Student student : students){
+				System.out.println(student.toString());
+			}
+			
+			Student.setCollege("Dai Hoc Cong Nghe");
+			System.out.println("-------------------------------After change-------------------------------");
+			for(Student student : students){
+				System.out.println(student.toString());
+			}
+		
+	}
+		// Question 2
+		public static void question2(){
+			Student a = new Student(1, "Nguyen Van A");
+			Student b = new Student(2, "Nguyen Van B");
+			Student c = new Student(3, "Nguyen Van C");
+			List<Student> students = new ArrayList<Student>();
+			students.add(a);
+			students.add(b);
+			students.add(c);
+			// Moi hoc sinh gop 100000
+			for(int i = 0 ; i < students.size() - 1; i++){
+				students.get(i).setGroupMoney(students.get(i).getGroupMoney() + 100000);
+			}
+			System.out.println("Moi hoc sinh gop 100000 : " + students.get(0).getGroupMoney());
+		}
+		
+		// question3 trong class MyMath
+		// Question4 trong Student
+		
+
+}

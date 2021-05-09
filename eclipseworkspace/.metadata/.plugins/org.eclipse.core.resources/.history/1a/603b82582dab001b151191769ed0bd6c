@@ -1,0 +1,18 @@
+package staticT;
+
+public class testexception {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public void check(int a) throws Exception{
+		if(a > 5){
+			throw new Exception("loix");
+		}
+		else{
+			System.out.println("success");
+		}
+	}
+
+}

@@ -1,0 +1,24 @@
+package com.vti.backend.datalayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
+
+import com.vti.entity.Department;
+import com.vti.utils.JDBCUtils;
+
+public class Repository implements IRepository{
+	private JDBCUtils jdbcUtis;
+	
+	public Repository() throws FileNotFoundException, IOException {
+		super();
+		jdbcUtis = new JDBCUtils();
+	}
+
+	public List<Department> getDepartmentList() {
+		List<Department> departments = new ArrayList<Department>();
+		return null;
+	}
+
+
+}

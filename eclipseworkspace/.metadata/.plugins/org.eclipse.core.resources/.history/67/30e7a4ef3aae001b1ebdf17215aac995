@@ -1,0 +1,14 @@
+package com.vti.utils;
+
+import com.vti.utils.properties.SourceProperties;
+
+public class JDBCUtils {
+	
+	private SourceProperties sp;
+	public JDBCUtils() {
+		sp = new SourceProperties();
+	}
+	String url = "";
+	String user = "";
+	String password = "";
+}

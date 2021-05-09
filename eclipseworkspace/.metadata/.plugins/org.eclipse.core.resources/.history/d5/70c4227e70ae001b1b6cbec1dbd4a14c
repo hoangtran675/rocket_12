@@ -1,0 +1,13 @@
+package com.vti.utils.properties;
+
+import java.util.Properties;
+
+public class SourceProperties {
+	private final static String SOURCE_PATH = "E:\\eclipseworkspace\\Testing_System_11_Hoang\\src\\main\\source\\source.properties";
+	private Properties source;
+	public SourceProperties() {
+		super();
+		source.load(new FileInputStream(SOURCE_PATH));
+	}
+	
+}

@@ -1,0 +1,49 @@
+package com.vti.utils;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Properties;
+
+import com.vti.utils.properties.SourceProperties;
+
+public class JdbcUtils {
+
+	private Connection connection;
+	private SourceProperties properties;
+	
+
+	public JdbcUtils() throws FileNotFoundException, IOException {
+		super();
+		properties = new SourceProperties();
+	}
+
+	public static void isConnectedForTesting() throws Exception {
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		Connection connection = DriverManager.getConnection(url, name, password);
+		if (connection == null) {
+			throw new Exception("Not Connected !");
+		} else {
+			System.out.println("Connect Successfully !");
+		}
+	}
+
+	public Connection connect() throws SQLException, ClassNotFoundException {
+		if (connection == null || connection.isClosed()) {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			return DriverManager.getConnection(url, name, password);
+		}
+		return connection;
+	}
+
+	public void disconnect(Connection connectionn) throws SQLException {
+		if (connectionn == null || connectionn.isClosed() == false) {
+			connectionn.close();
+			System.out.println("Closed Connection");
+		}
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.vti.utils.properties;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class test {
+
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		// TODO Auto-generated method stub
+		MessageProperties a = new MessageProperties();
+		System.out.println(a.getValue("account.insert.fail"));
+		SourceProperties b = new SourceProperties();
+		System.out.println(b.getValue("url"));
+
+	}
+
+}

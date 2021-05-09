@@ -1,0 +1,24 @@
+package com.vti.backend.datalayer;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.vti.entity.Department;
+
+public class test {
+
+	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		Repository a = new Repository();
+		List<Department> depts = new ArrayList<Department>();
+		depts = a.getDepartmentList();
+		for (Department department : depts) {
+			System.out.println(department.toString());
+		}
+		
+	}
+
+}

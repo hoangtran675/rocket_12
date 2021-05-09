@@ -1,0 +1,36 @@
+package finalT;
+
+public class Student {
+	
+	private static int id;
+	private String name;
+	
+	public Student(int id, String name) {
+		super();
+		this.name = name;
+		this.id = id;
+	}
+
+	public static int getId() {
+		return id;
+	}
+
+	public static void setId(int id) {
+		Student.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "Student ID : " +  id "\tStudent Name : " + name;
+	}
+	
+	
+}

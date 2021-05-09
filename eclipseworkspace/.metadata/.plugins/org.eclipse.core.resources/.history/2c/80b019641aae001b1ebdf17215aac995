@@ -1,0 +1,14 @@
+package com.vti.backend.businesslayer;
+
+import java.util.List;
+
+import com.vti.entity.Department;
+
+public class Service {
+	private Repository repository;
+	public List<Department> showDepartmentList() {
+		return null;
+	}
+	
+	
+}

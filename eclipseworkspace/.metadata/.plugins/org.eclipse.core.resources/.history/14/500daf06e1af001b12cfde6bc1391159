@@ -1,0 +1,5 @@
+package com.vti.FacebookDemo.backend.datalayer;
+
+public interface IRepository {
+
+}

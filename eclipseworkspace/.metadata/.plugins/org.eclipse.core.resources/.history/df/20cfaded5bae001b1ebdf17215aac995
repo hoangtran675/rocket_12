@@ -1,0 +1,17 @@
+package com.vti.utils;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+
+public class Program {
+
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		// TODO Auto-generated method stub
+		JDBCUtils a = new JDBCUtils();
+		a.connect();
+		Connection c = a.getConnection();
+
+	}
+
+}
