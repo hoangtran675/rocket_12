@@ -103,7 +103,7 @@ public class Repository implements IRepository {
 	public boolean isProExists(int id) throws ClassNotFoundException, SQLException {
 		jdbcUtils.connect();
 		Connection connection = jdbcUtils.getConnection();
-		String sql = "SELECT id FROM `project` WHERE projectId = ?";
+		String sql = "SELECT projectId FROM `project` WHERE projectId = ?";
 		PreparedStatement pre = connection.prepareStatement(sql);
 		pre.setInt(1, id);
 		ResultSet resultSet = pre.executeQuery();
@@ -116,7 +116,7 @@ public class Repository implements IRepository {
 	public void createProject(int projectId, int teamSize, int idManager, int idEmployees)
 			throws ClassNotFoundException, SQLException {
 		if (isProExists(projectId)) {
-			System.out.println();
+			System.out.println("Project ID was exists ");
 		} else {
 			jdbcUtils.connect();
 			Connection connection = jdbcUtils.getConnection();
